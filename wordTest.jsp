@@ -18,14 +18,14 @@ var json = {
 	{
 		"id": <c:out value="${word.id }" />,
 		"word": "<c:out value="${word.word }" />",
-		"descriptions": [
-			<c:forEach var="d" items="${word.descriptions }">
-			{
-				"description": "<c:out value="${d.description }" />",
-				"part_of_speech": "<c:out value="${d.partOfSpeech.name }" />",
-			},
-			</c:forEach>
-		],
+// 		"descriptions": [
+// 			<c:forEach var="d" items="${word.descriptions }">
+// 			{
+// 				"description": "<c:out value="${d.description }" />",
+// 				"part_of_speech": "<c:out value="${d.partOfSpeech.name }" />",
+// 			},
+// 			</c:forEach>
+// 		],
 	},
 </c:forEach>
 	]
@@ -33,15 +33,15 @@ var json = {
 var counter = 10;
 var intervalId = null;
 var flg = false;
-function showAnswer() {
-	stopCountDown();
-	var id = $("#index").val();
-	var answer = "";
-	for (var i = 0; i < json.list[id].descriptions.length; i++) {
-		answer += json.list[id].descriptions[i].description + " (" + json.list[id].descriptions[i].part_of_speech + ")<br>";
-	}
-	$("#japanese p").html(answer);
-}
+// function showAnswer() {
+// 	stopCountDown();
+// 	var id = $("#index").val();
+// 	var answer = "";
+// 	for (var i = 0; i < json.list[id].descriptions.length; i++) {
+// 		answer += json.list[id].descriptions[i].description + " (" + json.list[id].descriptions[i].part_of_speech + ")<br>";
+// 	}
+// 	$("#japanese p").html(answer);
+// }
 function showNext(e) {
 	console.log(e.target.id);
 	// カウンtのダウンをストップ
@@ -138,7 +138,7 @@ $(document).ready(function() {
 	$("#total").val(json.list.length);
 	$("#english").text(json.list[0].word);
 	$("#wordId").val(json.list[0].id);
-	$("#answer").click(showAnswer);
+// 	$("#answer").click(showAnswer);
 	$("#goodNext").click(showNext);
 	$("#badNext").click(showNext);
 	$("#jsonpost").click(ajaxTest);
